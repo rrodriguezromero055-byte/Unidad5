@@ -19,6 +19,7 @@ public class Burbuja {
                 int aux= numero[i];//gurada el valor 
                 numero[i]=numero[i+1];//sobreesc
                 numero[i+1]=aux;//regreso el 
+                
             }
             System.out.println(vueltas + ":"+ Arrays.toString(numero));vueltas++;
         }
