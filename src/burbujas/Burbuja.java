@@ -8,20 +8,34 @@ package burbujas;
  *
  * @author Romero
  */
+import java.util.Scanner;
 import java.util.Arrays;
 public class Burbuja {
     public static void main(String[] args) {
-        int numero[]={45,17,23,67,21};
+        Scanner sc=new Scanner(System.in);
+        String nombres[]= new String[5];
         int vueltas=1;
-        for(int j=0;j<numero.length -1; j++){
-        for(int i=0; i<numero.length-j-1; i++){
-            if(numero[i]>numero[i+1]){
-                int aux= numero[i];//gurada el valor 
-                numero[i]=numero[i+1];//sobreesc
-                numero[i+1]=aux;//regreso el 
+        
+        //Pide los cinco nombres 
+        for(int i=0;i<5;i++){
+            System.out.println("Nombre "+(i+1 )+" :");  
+            nombres[i]=sc.nextLine();
+        }
+        // Algoritmo de burbujas para string
+        for(int j=0;j<nombres.length -1; j++){
+        for(int i=0; i<nombres.length-j-1; i++){
+            // compareToIgnoreCase para comparar cadenas
+            if(nombres[i].compareToIgnoreCase(nombres[i+1])>0){
+                
+                //intercambio
+                String aux= nombres[i];//gurada el valor 
+                nombres[i]=nombres[i+1];//sobreesc
+                nombres[i+1]=aux;//regreso el 
                 
             }
-            System.out.println(vueltas + ":"+ Arrays.toString(numero));vueltas++;
+            //Mostrar arrgelo ordenado
+            System.out.println("Nombres ordenados:");
+            System.out.println(vueltas + ":"+ Arrays.toString(nombres));vueltas++;
         }
     }
         
