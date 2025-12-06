@@ -8,18 +8,19 @@ package metodos_busqueda;
  *
  * @author Romero
  */
-import java.util.List;
+
 import java.util.Arrays;
-import java.util.stream.Collectors;
 public class ArraysBinarySearch {
     public static void main(String[] args) {
-        List<String> nombres= Arrays.asList("Ana", "Luis","Alberto","Bea");
-        
-        //Filtrar nombres que empeizan con A
-        List<String> resultado= nombres.stream()
-                .filter(n -> n.startsWith("A"))
-                .collect(Collectors.toList());
-        
-        System.out.println(resultado);
+       int[] numeros= {5,2,9,1,6};
+       
+       Arrays.sort(numeros);
+       int index= Arrays.binarySearch(numeros, 6);
+       
+       if(index>= 0){
+           System.out.println("Encontrado en el indice: "+ index);
+       }else{
+           System.out.println("No encontrado");
+       }
     }
 }
